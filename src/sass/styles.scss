@@ -1,0 +1,76 @@
+@import "_variables.scss";
+
+html {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+*,
+*:before,
+*:after {
+  box-sizing: inherit;
+}
+
+body {
+  font-family: 'Lucida Sans', 'Lucida Sans Regular', sans-serif;
+  font-size: 0.875rem;
+  background-color: $color-white;
+  line-height: 1.75;
+  margin: 0;
+  padding: 0;
+}
+
+a { 
+  color: $color-orange; 
+
+  &:hover {
+    text-decoration: underline;
+  }
+}
+
+/* Grid */
+
+// Clearfix
+@mixin clearfix {
+  &:after {
+    display: table;
+    clear: both;
+    content: '';
+  }
+}
+
+.l-wrap {
+  max-width: 71.25rem;
+  margin-right: auto;
+  margin-left: auto;
+}
+
+.col-3-grid {
+  @include clearfix;
+  .grid-item {
+    width: 33.33333%;
+    float: left;
+  }
+}
+
+.col {
+  width: calc((100% - 1.25rem * 12) / 12);
+  margin-right: 0.625rem;
+  margin-left: 0.625rem;
+  float: left;
+}
+
+#header {
+  background-color: $color-dark-grey;
+  height: 4.375rem;
+  color: $color-white;
+
+  .logo{
+    background-image: url(../src/images/logo.png);
+    background-repeat: no-repeat;
+    width: 8rem;
+    height: 0.813rem;
+    display: block;
+  }
+}
